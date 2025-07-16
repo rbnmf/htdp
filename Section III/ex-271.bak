@@ -1,0 +1,10 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-intermediate-reader.ss" "lang")((modname ex-271) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+; String [List-of String] -> Boolean
+; determine whether any of the names in l
+; are equal to or an extension of s
+(define (find-name s l)
+  (ormap (lambda (x) (or (string=? x s)
+                         (string-contains? x s)
+                         )) l))
