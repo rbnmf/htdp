@@ -4,7 +4,7 @@
 (define-struct no-info [])
 (define NONE (make-no-info))
  
-(define-struct node [ssn name left right])
+[define-struct node [ssn name left right]]
 ; A BT (short for BinaryTree) is one of:
 ; – NONE
 ; – (make-node Number Symbol BT BT)

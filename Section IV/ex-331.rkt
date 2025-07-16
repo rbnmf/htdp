@@ -9,14 +9,15 @@
 ; A File.v1 is a String.
 
 (define DT '(("part 1" "part 2" "part 3")
-             "read!"
+             ("read!")
              (("hang" "draw")
               ("read!"))))
+
 ; Dir.v1 -> N
-; determine how many files a given Dir.v1 contains
+; count the number of files in a Dir.V1
 (check-expect (how-many DT) 7)
-(define (how-many dir)
+(define (how-many dt)
   (cond
-    [(empty? dir) 0]
-    [(string? (first dir)) (add1 (how-many (rest dir)))]
-    [else (+ (how-many (first dir)) (how-many (rest dir)))]))
+    [(empty? dt) 0]
+    [(string? dt) 1]
+    [else (+ (how-many (first dt)) (how-many (rest dt)))]))
